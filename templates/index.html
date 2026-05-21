@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Enfermedades Cardíacas</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>❤️ Evaluación de Riesgo Cardíaco</h1>
+            <p>Ingrese los datos clínicos del paciente</p>
+        </div>
+        <div class="form-container">
+            <form action="/predict" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Edad (años)</label>
+                        <input type="number" name="age" step="1" required>
+                        <small class="help-text">29 - 77 años</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Sexo</label>
+                        <select name="sex" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">Mujer (0)</option>
+                            <option value="1">Hombre (1)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Dolor en el Pecho (cp)</label>
+                        <select name="cp" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">Angina típica (0)</option>
+                            <option value="1">Angina atípica (1)</option>
+                            <option value="2">Dolor no anginoso (2)</option>
+                            <option value="3">Asintomático (3)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Presión arterial (trestbps)</label>
+                        <input type="number" name="trestbps" step="1" required>
+                        <small class="help-text">94 - 200 mm Hg</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Colesterol (chol)</label>
+                        <input type="number" name="chol" step="1" required>
+                        <small class="help-text">126 - 564 mg/dl</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Glucosa > 120 mg/dl (fbs)</label>
+                        <select name="fbs" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">No (0)</option>
+                            <option value="1">Sí (1)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>ECG en reposo (restecg)</label>
+                        <select name="restecg" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">Normal (0)</option>
+                            <option value="1">Anomalía ST-T (1)</option>
+                            <option value="2">Hipertrofia (2)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Frecuencia cardíaca máxima (thalach)</label>
+                        <input type="number" name="thalach" step="1" required>
+                        <small class="help-text">71 - 202 lpm</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Angina por ejercicio (exang)</label>
+                        <select name="exang" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">No (0)</option>
+                            <option value="1">Sí (1)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Depresión ST (oldpeak)</label>
+                        <input type="number" name="oldpeak" step="0.1" required>
+                        <small class="help-text">0 - 6.2</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Pendiente ST (slope)</label>
+                        <select name="slope" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">Ascendente (0)</option>
+                            <option value="1">Plana (1)</option>
+                            <option value="2">Descendente (2)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Vasos principales (ca)</label>
+                        <select name="ca" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Talasemia (thal)</label>
+                        <select name="thal" required>
+                            <option value="">Seleccione...</option>
+                            <option value="0">Normal (0)</option>
+                            <option value="1">Defecto fijo (1)</option>
+                            <option value="2">Defecto reversible (2)</option>
+                            <option value="3">No especificado (3)</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">🔍 Evaluar Riesgo Cardíaco</button>
+            </form>
+        </div>
+        <div class="footer">
+            <p>⚠️ Esta herramienta es solo para fines educativos. No reemplaza el diagnóstico médico profesional.</p>
+        </div>
+    </div>
+</body>
+</html>

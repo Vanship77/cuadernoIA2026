@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - Evaluación Cardíaca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="result-card">
+        <div class="result-header {{ color }}">
+            <h1>❤️ Resultado</h1>
+            <div class="probability">{{ probabilidad }}</div>
+            <h2>{{ resultado }}</h2>
+        </div>
+        <div class="result-body">
+            <button onclick="window.location.href='/'">← Nueva Evaluación</button>
+        </div>
+    </div>
+</body>
+</html>
